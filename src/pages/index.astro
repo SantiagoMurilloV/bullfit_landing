@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Analytics from '@vercel/analytics/astro';
 
 const svg = (paths: string, size = 28) =>
   `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${paths}</svg>`;
@@ -29,11 +30,85 @@ const icons = {
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+  <!-- ═══ SEO BÁSICO ═══ -->
+  <title>BullFit Armenia | Entrenamiento Semipersonalizado — Quindío, Colombia</title>
+  <meta name="description" content="BullFit: entrenamiento semipersonalizado en Armenia, Quindío. Grupos de máximo 10 personas, atención personalizada, planes desde $10.000. ¡Entrena sin límites!"/>
+  <meta name="keywords" content="gimnasio Armenia Quindío, entrenamiento personalizado Armenia, BullFit, fitness Armenia Colombia, gym Armenia, clases funcionales Armenia, entrenamiento semipersonalizado Colombia"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="author" content="BullFit Armenia"/>
+  <link rel="canonical" href="https://bullfit.co/"/>
+
+  <!-- ═══ OPEN GRAPH (Facebook, WhatsApp, etc.) ═══ -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://bullfit.co/"/>
+  <meta property="og:title" content="BullFit Armenia | Entrenamiento Semipersonalizado"/>
+  <meta property="og:description" content="Grupos de máximo 10 personas en Armenia, Quindío. Atención personalizada, ambiente familiar y resultados reales. Plan día desde $10.000."/>
+  <meta property="og:image" content="https://bullfit.co/brand/og-image.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:site_name" content="BullFit Armenia"/>
+  <meta property="og:locale" content="es_CO"/>
+
+  <!-- ═══ TWITTER / X CARD ═══ -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="BullFit Armenia | Entrenamiento Semipersonalizado"/>
+  <meta name="twitter:description" content="Grupos de máximo 10 personas en Armenia, Quindío. Atención personalizada y resultados reales."/>
+  <meta name="twitter:image" content="https://bullfit.co/brand/og-image.jpg"/>
+
+  <!-- ═══ GEO / LOCAL SEO ═══ -->
+  <meta name="geo.region" content="CO-QUI"/>
+  <meta name="geo.placename" content="Armenia, Quindío, Colombia"/>
+  <meta name="geo.position" content="4.5339;-75.6811"/>
+  <meta name="ICBM" content="4.5339, -75.6811"/>
+
+  <!-- ═══ SCHEMA.ORG (JSON-LD) — rich snippets en Google ═══ -->
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "SportsActivityLocation",
+    "name": "BullFit Armenia",
+    "description": "Centro de entrenamiento semipersonalizado en Armenia, Quindío. Grupos de máximo 10 personas por sesión.",
+    "url": "https://bullfit.co",
+    "logo": "https://bullfit.co/brand/logo-badge.png",
+    "image": "https://bullfit.co/brand/og-image.jpg",
+    "telephone": "+573186011559",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Armenia",
+      "addressRegion": "Quindío",
+      "addressCountry": "CO"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 4.5339,
+      "longitude": -75.6811
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "06:00",
+        "closes": "19:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday"],
+        "opens": "09:00",
+        "closes": "12:00"
+      }
+    ],
+    "priceRange": "$",
+    "sameAs": [
+      "https://www.instagram.com/bullfit.axm/"
+    ]
+  }</script>
+
+  <!-- ═══ FAVICONS ═══ -->
   <link rel="icon" href="/favicon.ico" sizes="any"/>
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
   <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
-  <meta name="description" content="BullFit Armenia — Entrenamiento semipersonalizado, máximo 10 personas por sesión."/>
-  <title>BullFit | Entrena Sin Límites — Armenia, Quindío</title>
+
+  <!-- ═══ FUENTES ═══ -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
@@ -888,32 +963,34 @@ const icons = {
             {['Nombre','Apellido'].map(l => (
               <div>
                 <label class="block text-[.62rem] uppercase tracking-wider mb-2" style="color:var(--gray-4);">{l}</label>
-                <input type="text" placeholder={`Tu ${l.toLowerCase()}`} class="inp-light w-full"/>
+                <input type="text" name={l.toLowerCase()} placeholder={`Tu ${l.toLowerCase()}`} class="inp-light w-full" required={l === 'Nombre'}/>
               </div>
             ))}
           </div>
 
           <div>
             <label class="block text-[.62rem] uppercase tracking-wider mb-2" style="color:var(--gray-4);">WhatsApp</label>
-            <input type="tel" placeholder="+57 300 000 0000" class="inp-light w-full"/>
+            <input type="tel" name="whatsapp" placeholder="+57 300 000 0000" class="inp-light w-full" required/>
           </div>
 
           <div>
             <label class="block text-[.62rem] uppercase tracking-wider mb-2" style="color:var(--gray-4);">¿Qué te interesa?</label>
-            <select class="inp-light w-full" style="background:#fff;color:var(--black);">
+            <select name="interes" class="inp-light w-full" style="background:#fff;color:var(--black);">
               <option value="">Selecciona una opción</option>
               <option>Plan Día</option>
               <option>Plan Mensual</option>
+              <option>Plan Personalizado</option>
               <option>Solo quiero información</option>
             </select>
           </div>
 
           <div>
             <label class="block text-[.62rem] uppercase tracking-wider mb-2" style="color:var(--gray-4);">Mensaje (opcional)</label>
-            <textarea rows="3" placeholder="Tu objetivo, dudas..." class="inp-light w-full resize-none"></textarea>
+            <textarea rows="3" name="mensaje" placeholder="Tu objetivo, dudas..." class="inp-light w-full resize-none"></textarea>
           </div>
 
           <button id="sbtn" type="submit" class="btn-r w-full justify-center">Enviar Consulta</button>
+          <p id="cform-msg" class="text-center text-sm hidden" style="margin-top:.25rem;"></p>
         </form>
       </div>
 
@@ -1046,17 +1123,72 @@ const icons = {
     if(o2) o2.style.transform=`translate(${-x*16}px,${-y*12}px)`;
   },{passive:true});
 
-  /* FORM */
-  document.getElementById('cform')?.addEventListener('submit',e=>{
+  /* FORM — envía la consulta al administrador como JSON */
+  // 👇 PEGA AQUÍ LA URL DEL ENDPOINT cuando la tengas (ej: 'https://...').
+  const FORM_ENDPOINT = '';
+
+  document.getElementById('cform')?.addEventListener('submit', async e => {
     e.preventDefault();
-    const btn=document.getElementById('sbtn') as HTMLButtonElement;
-    btn.textContent='¡Enviado!'; btn.style.background='#16a34a';
-    setTimeout(()=>{
-      btn.textContent='Enviar Consulta'; btn.style.background='';
-      (e.currentTarget as HTMLFormElement).reset();
-    },3000);
+    const form = e.currentTarget as HTMLFormElement;
+    const btn  = document.getElementById('sbtn') as HTMLButtonElement;
+    const msg  = document.getElementById('cform-msg') as HTMLElement;
+
+    const fd = new FormData(form);
+    const payload = {
+      nombre:   (fd.get('nombre')   || '').toString().trim(),
+      apellido: (fd.get('apellido') || '').toString().trim(),
+      whatsapp: (fd.get('whatsapp') || '').toString().trim(),
+      interes:  (fd.get('interes')  || '').toString().trim(),
+      mensaje:  (fd.get('mensaje')  || '').toString().trim(),
+      fuente:   'landing-bullfit',
+      fecha:    new Date().toISOString(),
+    };
+
+    const showMsg = (text: string, color: string) => {
+      msg.textContent = text; msg.style.color = color; msg.classList.remove('hidden');
+    };
+
+    if (!payload.nombre || !payload.whatsapp) {
+      showMsg('Por favor completa tu nombre y WhatsApp.', '#dc2626');
+      return;
+    }
+
+    btn.disabled = true;
+    const original = btn.textContent;
+    btn.textContent = 'Enviando…';
+    msg.classList.add('hidden');
+
+    try {
+      if (!FORM_ENDPOINT) {
+        // Endpoint aún no configurado: dejamos el JSON listo en consola.
+        console.log('[BullFit] Consulta lista para enviar:', JSON.stringify(payload));
+        throw new Error('ENDPOINT_PENDIENTE');
+      }
+      const res = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+
+      btn.textContent = '¡Enviado!'; btn.style.background = '#16a34a';
+      showMsg('Gracias, te contactaremos pronto por WhatsApp.', '#16a34a');
+      form.reset();
+      setTimeout(() => {
+        btn.textContent = original; btn.style.background = ''; btn.disabled = false;
+        msg.classList.add('hidden');
+      }, 4000);
+    } catch (err) {
+      btn.textContent = original; btn.disabled = false;
+      if ((err as Error).message === 'ENDPOINT_PENDIENTE') {
+        showMsg('Formulario en configuración. Escríbenos por WhatsApp mientras tanto.', '#b45309');
+      } else {
+        showMsg('No se pudo enviar. Intenta de nuevo o escríbenos por WhatsApp.', '#dc2626');
+      }
+    }
   });
 </script>
 
+  <Analytics />
 </body>
 </html>
