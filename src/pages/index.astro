@@ -29,7 +29,7 @@ const icons = {
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <link rel="icon" type="image/png" href="/brand/logo-full.png"/>
   <meta name="description" content="BullFit Armenia — Entrenamiento semipersonalizado, máximo 10 personas por sesión."/>
   <title>BullFit | Entrena Sin Límites — Armenia, Quindío</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -48,10 +48,7 @@ const icons = {
   <div class="max-w-7xl mx-auto flex items-center justify-between">
 
     <a href="#" class="group flex items-center gap-2.5">
-      <div class="relative w-9 h-9 shrink-0">
-        <div class="absolute inset-0 rounded-sm rotate-[14deg] group-hover:rotate-0 transition-transform duration-300" style="background:var(--red);"></div>
-        <span class="absolute inset-0 flex items-center justify-center text-white font-black" style="font-family:'Bebas Neue';font-size:17px;">BF</span>
-      </div>
+      <img src="/brand/logo-bull.png" alt="BullFit" class="w-10 h-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110" />
       <span class="font-black tracking-[.14em] text-white" style="font-family:'Bebas Neue';font-size:1.1rem;">
         BULL<span style="color:var(--red);">FIT</span>
       </span>
@@ -129,10 +126,11 @@ const icons = {
           <span class="text-[.65rem] font-bold tracking-[.35em] uppercase" style="color:var(--red);">Armenia · Quindío</span>
         </div>
 
-        <h1 style="font-family:'Bebas Neue';line-height:.88;margin-bottom:2rem;">
-          <div class="h1 text-white" style="font-size:clamp(4.5rem,12vw,10.5rem);">ENTRENA</div>
-          <div class="h2" style="font-size:clamp(4.5rem,12vw,10.5rem);color:var(--red);">SIN</div>
-          <div class="h3 text-white" style="font-size:clamp(4.5rem,12vw,10.5rem);">LÍMITES</div>
+        <h1 style="font-family:'Bebas Neue';line-height:.92;margin-bottom:2rem;">
+          <div class="h1 text-white" style="font-size:clamp(4rem,13vw,10.5rem);">ENTRENA</div>
+          <div class="h2 whitespace-nowrap" style="font-size:clamp(3rem,9.5vw,10.5rem);">
+            <span style="color:var(--red);">SIN</span> <span class="text-white">LÍMITES</span>
+          </div>
         </h1>
 
         <p class="hs leading-relaxed max-w-[460px] mb-10" style="color:var(--gray-5);font-size:1.02rem;">
@@ -344,11 +342,11 @@ const icons = {
   <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
     <div class="grid md:grid-cols-2 gap-16 items-center">
 
-      <div class="sr">
-        <h2 class="font-black text-white leading-[.88] mb-6" style="font-family:'Bebas Neue';font-size:clamp(3.2rem,7vw,5.5rem);">
+      <div class="sr text-center md:text-left">
+        <h2 class="font-black text-white leading-[.85] mb-6" style="font-family:'Bebas Neue';font-size:clamp(4rem,13vw,5.5rem);">
           NO SOMOS<br/>UN GYM<br/>MÁS.
         </h2>
-        <p style="color:rgba(255,255,255,.82);line-height:1.75;max-width:420px;">
+        <p class="mx-auto md:mx-0" style="color:rgba(255,255,255,.82);line-height:1.75;max-width:420px;">
           Somos el espacio donde el entrenamiento de calidad es accesible, la comunidad es real y cada sesión tiene propósito.
         </p>
         <a href="#planes" class="btn-dark mt-8 inline-flex">Ver Planes</a>
@@ -395,14 +393,14 @@ const icons = {
         <span class="w-7 h-[1.5px]" style="background:var(--red);"></span>
       </span>
       <h2 class="font-black text-white leading-[.9]" style="font-family:'Bebas Neue';font-size:clamp(3.2rem,7vw,6rem);">
-        ELIGE TU<br/><span style="color:var(--red);">PLAN</span>
+        ELIGE TU <span style="color:var(--red);">PLAN</span>
       </h2>
       <p class="mt-4 max-w-xs mx-auto text-sm leading-relaxed" style="color:var(--gray-5);">
-        Dos opciones claras. Sin letra pequeña, sin trampa.
+        Tres formas de entrenar. Sin letra pequeña, sin trampa.
       </p>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto items-start">
 
       <!-- Plan Día -->
       <div class="sr d1 group relative rounded-2xl overflow-hidden ch ch-dark" style="background:var(--gray-2);border:1px solid var(--gray-3);">
@@ -414,7 +412,7 @@ const icons = {
           </div>
 
           <div class="mb-7 pb-7" style="border-bottom:1px solid var(--gray-3);">
-            <div class="font-black text-white" style="font-family:'Bebas Neue';font-size:2.8rem;line-height:1;">Consultar</div>
+            <div class="font-black text-white" style="font-family:'Bebas Neue';font-size:2.8rem;line-height:1;">$10.000<span style="font-size:1rem;color:var(--gray-5);"> /día</span></div>
             <div class="text-xs uppercase tracking-wider mt-1" style="color:var(--gray-5);">precio por sesión</div>
           </div>
 
@@ -435,7 +433,7 @@ const icons = {
             ))}
           </div>
 
-          <a href="#contacto" class="btn-o w-full" style="font-size:.73rem;">Consultar Precio</a>
+          <a href="#contacto" class="btn-o w-full" style="font-size:.73rem;">Quiero Empezar</a>
         </div>
       </div>
 
@@ -449,7 +447,7 @@ const icons = {
           </div>
 
           <div class="mb-7 pb-7" style="border-bottom:1px solid var(--gray-3);">
-            <div class="font-black" style="font-family:'Bebas Neue';font-size:2.8rem;line-height:1;color:var(--red);">Consultar</div>
+            <div class="font-black" style="font-family:'Bebas Neue';font-size:2.8rem;line-height:1;color:var(--red);">$135.000<span style="font-size:1rem;color:var(--gray-5);"> /mes</span></div>
             <div class="text-xs uppercase tracking-wider mt-1" style="color:var(--gray-5);">precio mensual</div>
           </div>
 
@@ -471,7 +469,48 @@ const icons = {
             ))}
           </div>
 
-          <a href="#contacto" class="btn-r w-full" style="font-size:.73rem;">Consultar Precio</a>
+          <a href="#contacto" class="btn-r w-full" style="font-size:.73rem;">Quiero Empezar</a>
+        </div>
+      </div>
+
+      <!-- Plan Personalizado -->
+      <div class="sr d3 group relative rounded-2xl overflow-hidden ch ch-dark" style="background:var(--gray-2);border:1px solid var(--gray-3);">
+        <div class="absolute top-0 left-0 right-0 h-[2px] scale-x-0 group-hover:scale-x-100 transition-transform duration-400" style="background:var(--red);"></div>
+        <div class="p-9">
+          <div class="mb-7">
+            <div class="text-[.6rem] uppercase tracking-[.3em] mb-1" style="color:var(--gray-5);">Atención exclusiva</div>
+            <h3 class="font-black text-white" style="font-family:'Bebas Neue';font-size:2.2rem;">Personalizado</h3>
+          </div>
+
+          <!-- coaches -->
+          <div class="mb-7 pb-7" style="border-bottom:1px solid var(--gray-3);">
+            <div class="grid grid-cols-2 gap-2">
+              <img src="/coaches/coach-1.jpg" alt="Andrés" class="w-full rounded-xl object-cover object-top" style="aspect-ratio:3/4;border:2px solid var(--red);"/>
+              <img src="/coaches/coach-2.jpg" alt="Sebastián" class="w-full rounded-xl object-cover object-top" style="aspect-ratio:3/4;border:2px solid var(--red);"/>
+            </div>
+            <div class="mt-3 text-center">
+              <div class="text-white font-bold text-sm leading-tight">Andrés & Sebastián</div>
+              <div class="text-xs mt-0.5" style="color:var(--gray-5);">Entrenadores BullFit</div>
+            </div>
+          </div>
+
+          <div class="space-y-3.5 mb-9">
+            {[
+              'Entrenamiento 100% personalizado',
+              'Acompañamiento directo de Andrés y Sebastián',
+              'Dentro de nuestras instalaciones',
+              'Plan a la medida de tu objetivo',
+            ].map(f => (
+              <div class="flex items-center gap-3">
+                <div class="w-4 h-4 rounded shrink-0 flex items-center justify-center" style="background:rgba(232,0,14,.12);border:1px solid rgba(232,0,14,.28);">
+                  <div class="w-1.5 h-1.5 rounded-full" style="background:var(--red);"></div>
+                </div>
+                <span class="text-sm" style="color:var(--gray-5);">{f}</span>
+              </div>
+            ))}
+          </div>
+
+          <a href="#contacto" class="btn-o w-full" style="font-size:.73rem;">Consultar Precio</a>
         </div>
       </div>
 
@@ -503,8 +542,8 @@ const icons = {
           <span class="text-[.65rem] font-bold tracking-[.3em] uppercase" style="color:var(--red);">App BullFit</span>
         </span>
 
-        <h2 class="font-black leading-[.88] mb-6" style="font-family:'Bebas Neue';font-size:clamp(2.8rem,5.5vw,4.5rem);color:var(--black);">
-          TODO DESDE<br/>TU <span style="color:var(--red);">CELULAR</span>
+        <h2 class="font-black leading-[.9] mb-6 whitespace-nowrap" style="font-family:'Bebas Neue';font-size:clamp(1.9rem,8.5vw,4.5rem);color:var(--black);">
+          TODO DESDE TU <span style="color:var(--red);">CELULAR</span>
         </h2>
 
         <p class="leading-relaxed mb-10" style="color:var(--gray-4);font-size:.95rem;max-width:440px;">
@@ -559,21 +598,37 @@ const icons = {
   <div class="absolute inset-0 grid-light"></div>
   <div class="absolute top-0 inset-x-0 h-1" style="background:var(--red);"></div>
 
-  <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
-    <div class="grid md:grid-cols-3 gap-0 rounded-2xl overflow-hidden" style="border:1px solid rgba(0,0,0,.09);">
+  <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-12">
 
+    <div class="text-center mb-12 sr">
+      <span class="inline-flex items-center gap-3 mb-5 justify-center">
+        <span class="w-7 h-[1.5px]" style="background:var(--red);"></span>
+        <span class="text-[.65rem] font-bold tracking-[.3em] uppercase" style="color:var(--red);">Visítanos</span>
+        <span class="w-7 h-[1.5px]" style="background:var(--red);"></span>
+      </span>
+      <h2 class="font-black leading-[.9]" style="font-family:'Bebas Neue';font-size:clamp(2.6rem,6vw,4.5rem);color:var(--black);">
+        HORARIOS &amp; <span style="color:var(--red);">UBICACIÓN</span>
+      </h2>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-4">
       {[
-        { label:'Lunes – Viernes', hours:'6:00 AM – 7:00 PM' },
-        { label:'Sábados',         hours:'9:00 AM – 12:00 PM' },
-        { label:'Ubicación',      hours:'Armenia, Quindío'   },
+        { icon:icons.clock,  label:'Lunes – Viernes', hours:'6:00 AM – 7:00 PM', sub:'Abierto todo el día' },
+        { icon:icons.clock,  label:'Sábados',         hours:'9:00 AM – 12:00 PM', sub:'Media jornada' },
+        { icon:icons.mapPin, label:'Ubicación',       hours:'Armenia, Quindío',  sub:'Colombia' },
       ].map((h,i) => (
-        <div class={`sr d${i+1} px-8 py-10 text-center ${i<2 ? 'border-b md:border-b-0 md:border-r' : ''}`} style={`background:#fff; border-color:rgba(0,0,0,.07);`}>
-          <div class="text-[.62rem] uppercase tracking-[.28em] mb-3" style="color:var(--gray-4);">{h.label}</div>
-          <div class="font-black leading-tight" style="font-family:'Bebas Neue';font-size:clamp(1.6rem,3vw,2.4rem);color:var(--black);">{h.hours}</div>
-          {i===2 && <div class="text-xs mt-2" style="color:var(--red);">Colombia</div>}
+        <div class={`sr d${i+1} group relative rounded-2xl p-7 flex sm:flex-col items-center sm:text-center gap-5 sm:gap-0 ch ch-light`} style="background:#fff;border:1px solid rgba(0,0,0,.08);box-shadow:0 10px 30px rgba(0,0,0,.05);">
+          <div class="absolute top-0 left-0 right-0 h-[3px] scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left" style="background:var(--red);"></div>
+          <div class="w-12 h-12 rounded-xl shrink-0 flex items-center justify-center sm:mb-4" style="background:rgba(232,0,14,.08);border:1px solid rgba(232,0,14,.18);color:var(--red);">
+            <span set:html={h.icon}></span>
+          </div>
+          <div class="min-w-0">
+            <div class="text-[.6rem] uppercase tracking-[.26em] mb-1.5" style="color:var(--gray-4);">{h.label}</div>
+            <div class="font-black leading-none" style="font-family:'Bebas Neue';font-size:clamp(1.5rem,5vw,1.9rem);color:var(--black);">{h.hours}</div>
+            <div class="text-[.72rem] mt-1.5" style="color:var(--gray-4);">{h.sub}</div>
+          </div>
         </div>
       ))}
-
     </div>
   </div>
 </section>
@@ -589,16 +644,22 @@ const icons = {
   <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
     <div class="grid md:grid-cols-2 gap-16 items-center">
 
-      <!-- foto fundador -->
+      <!-- foto fundador — collage de 3 -->
       <div class="sl flex justify-center md:justify-start">
-        <div class="relative" style="width:100%;max-width:420px;">
-          <img id="founder-foto" src="" alt="Fundador BullFit"
-            class="hidden w-full rounded-2xl object-cover object-top"
-            style="aspect-ratio:3/4;box-shadow:0 24px 64px rgba(0,0,0,.14);" />
-          <div id="founder-placeholder" class="w-full rounded-2xl flex flex-col items-center justify-center gap-3"
-            style="aspect-ratio:3/4;background:#ebebed;border:2px dashed rgba(0,0,0,.1);">
-            <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="color:rgba(0,0,0,.2);"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            <span class="text-[.65rem] uppercase tracking-[.25em]" style="color:rgba(0,0,0,.22);">Foto fundador</span>
+        <div class="relative" style="width:100%;max-width:460px;">
+          <div class="grid grid-cols-5 grid-rows-2 gap-3" style="aspect-ratio:1/1;">
+            <!-- principal grande -->
+            <img src="/founder/founder-1.jpg" alt="Fundador BullFit entrenando"
+              class="col-span-3 row-span-2 w-full h-full rounded-2xl object-cover object-top"
+              style="box-shadow:0 24px 64px rgba(0,0,0,.16);" />
+            <!-- secundaria superior -->
+            <img src="/founder/founder-2.jpg" alt="Fundador BullFit en carrera"
+              class="col-span-2 row-span-1 w-full h-full rounded-2xl object-cover object-top"
+              style="box-shadow:0 16px 40px rgba(0,0,0,.12);" />
+            <!-- secundaria inferior -->
+            <img src="/founder/founder-3.jpg" alt="Fundador BullFit con la bandera"
+              class="col-span-2 row-span-1 w-full h-full rounded-2xl object-cover object-center"
+              style="box-shadow:0 16px 40px rgba(0,0,0,.12);" />
           </div>
           <div class="absolute -bottom-4 -right-4 w-24 h-24 rounded-2xl -z-10" style="background:var(--red);opacity:.1;"></div>
           <div class="absolute -top-4 -left-4 w-16 h-16 rounded-xl -z-10" style="background:var(--gray-2);border:1px solid var(--gray-3);"></div>
@@ -611,8 +672,8 @@ const icons = {
           <span class="w-8 h-[1.5px]" style="background:var(--red);"></span>
           <span class="text-[.65rem] font-bold tracking-[.3em] uppercase" style="color:var(--red);">El equipo detrás</span>
         </span>
-        <h2 class="font-black leading-[.88] mb-3" style="font-family:'Bebas Neue';font-size:clamp(2.8rem,5.5vw,4.5rem);color:var(--black);">
-          NOMBRE<br/><span style="color:var(--red);">FUNDADOR</span>
+        <h2 class="font-black leading-[.9] mb-3 tracking-tight whitespace-nowrap" style="font-family:'Bebas Neue';font-size:clamp(2.3rem,4.8vw,3.9rem);color:var(--black);">
+          ANDRÉS FELIPE <span style="color:var(--red);">TOVAR</span>
         </h2>
         <p class="text-sm uppercase tracking-[.2em] mb-6" style="color:var(--gray-4);">Fundador &amp; Head Coach · BullFit</p>
         <blockquote class="relative pl-5 mb-8" style="border-left:3px solid var(--red);">
@@ -655,73 +716,59 @@ const icons = {
         <span class="w-7 h-[1.5px]" style="background:var(--red);"></span>
       </span>
       <h2 class="font-black text-white leading-[.9]" style="font-family:'Bebas Neue';font-size:clamp(2.8rem,6vw,5rem);">
-        NUESTRA<br/><span style="color:var(--red);">FAMILIA</span>
+        NUESTRA <span style="color:var(--red);">FAMILIA</span>
       </h2>
       <p class="mt-4 max-w-sm mx-auto text-sm leading-relaxed" style="color:var(--gray-5);">
         Personas reales, resultados reales. Esto es BullFit.
       </p>
     </div>
 
-    <!-- mosaico editorial — 5 celdas: grande + 4 pequeñas -->
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 auto-rows-[200px] md:auto-rows-[220px]">
+    {/* lista de fotos compartida */}
+    {(() => {
+      const famPics = [
+        ['fam-7.jpg','BullFit comunidad','d1'],
+        ['fam-8.jpg','BullFit equipo','d2'],
+        ['fam-4.jpg','BullFit carrera','d3'],
+        ['fam-1.jpg','BullFit corriendo','d4'],
+        ['fam-2.jpg','BullFit equipo nocturno','d5'],
+        ['fam-9.jpg','BullFit momento','d1'],
+        ['fam-3.jpg','BullFit grupo','d2'],
+        ['fam-5.jpg','BullFit maratón','d3'],
+        ['fam-6.jpg','BullFit meta','d4'],
+      ];
+      return (
+        <>
+          {/* MÓVIL — carrusel auto (marquee infinito) */}
+          <div class="md:hidden fam-marquee-wrap -mx-6">
+            <div class="fam-marquee">
+              {[...famPics, ...famPics].map(([src,alt], i) => (
+                <div class="fam-card group relative rounded-2xl overflow-hidden ch ch-dark">
+                  <img src={`/family/${src}`} alt={alt} loading="lazy" class="w-full h-full object-cover block"/>
+                  <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,.35),transparent 55%);"></div>
+                </div>
+              ))}
+            </div>
+          </div>
 
-      <!-- foto grande izquierda — ocupa 2 filas -->
-      <div class="sr d1 group relative rounded-2xl overflow-hidden row-span-2 ch ch-dark">
-        <img src="" alt="BullFit comunidad" class="hidden absolute inset-0 w-full h-full object-cover"/>
-        <div class="absolute inset-0 flex flex-col items-center justify-center gap-2" style="background:var(--gray-2);border:1px solid var(--gray-3);">
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gray-3);"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
-          <span class="text-[.55rem] uppercase tracking-[.2em]" style="color:var(--gray-3);">foto comunidad</span>
-        </div>
-        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400" style="background:rgba(232,0,14,.1);"></div>
-      </div>
-
-      <!-- foto top centro -->
-      <div class="sr d2 group relative rounded-2xl overflow-hidden ch ch-dark">
-        <img src="" alt="BullFit entrenamiento" class="hidden absolute inset-0 w-full h-full object-cover"/>
-        <div class="absolute inset-0 flex items-center justify-center" style="background:var(--gray-2);border:1px solid var(--gray-3);">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gray-3);"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
-        </div>
-        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400" style="background:rgba(232,0,14,.1);"></div>
-      </div>
-
-      <!-- foto top derecha (oculta en móvil) -->
-      <div class="sr d3 group relative rounded-2xl overflow-hidden ch ch-dark hidden md:block">
-        <img src="" alt="BullFit sesión" class="hidden absolute inset-0 w-full h-full object-cover"/>
-        <div class="absolute inset-0 flex items-center justify-center" style="background:var(--gray-1);border:1px solid var(--gray-3);">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gray-3);"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
-        </div>
-        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400" style="background:rgba(232,0,14,.1);"></div>
-      </div>
-
-      <!-- foto bottom centro -->
-      <div class="sr d4 group relative rounded-2xl overflow-hidden ch ch-dark">
-        <img src="" alt="BullFit ambiente" class="hidden absolute inset-0 w-full h-full object-cover"/>
-        <div class="absolute inset-0 flex items-center justify-center" style="background:var(--gray-1);border:1px solid var(--gray-3);">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gray-3);"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
-        </div>
-        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400" style="background:rgba(232,0,14,.1);"></div>
-      </div>
-
-      <!-- foto bottom derecha — ocupa 2 cols en móvil -->
-      <div class="sr d5 group relative rounded-2xl overflow-hidden ch ch-dark col-span-1 md:col-span-1">
-        <img src="" alt="BullFit grupo" class="hidden absolute inset-0 w-full h-full object-cover"/>
-        <div class="absolute inset-0 flex items-center justify-center" style="background:var(--gray-2);border:1px solid var(--gray-3);">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gray-3);"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
-        </div>
-        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400" style="background:rgba(232,0,14,.1);"></div>
-      </div>
-
-    </div>
+          {/* DESKTOP — mosaico masonry */}
+          <div class="hidden md:block columns-3 gap-3 [&>*]:mb-3">
+            {famPics.map(([src,alt,d]) => (
+              <div class={`sr ${d} group relative rounded-2xl overflow-hidden break-inside-avoid ch ch-dark`}>
+                <img src={`/family/${src}`} alt={alt} loading="lazy" class="w-full h-auto object-cover block"/>
+                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400" style="background:rgba(232,0,14,.12);"></div>
+              </div>
+            ))}
+          </div>
+        </>
+      );
+    })()}
   </div>
 </section>
 
-<!-- grad: black → #ebebed -->
-<div class="grad-section" style="background:linear-gradient(to bottom,var(--black),#545458 36px,#ebebed);height:100px;"></div>
-
 <!-- ════════════════════════════════
-  INSTAGRAM  — gris claro
+  INSTAGRAM  — sección eliminada
 ════════════════════════════════ -->
-<section class="relative py-20 overflow-hidden" style="background:#ebebed;">
+<section class="hidden relative py-20 overflow-hidden" style="background:#ebebed;">
   <div class="absolute inset-0 grid-light"></div>
 
   <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
@@ -757,9 +804,6 @@ const icons = {
     </div>
   </div>
 </section>
-
-<!-- grad: #ebebed → black -->
-<div class="grad-section" style="background:linear-gradient(to bottom,#ebebed,#545458 36px,var(--black));height:100px;"></div>
 
 <!-- ════════════════════════════════
   CTA CENTRAL  — negro + rojo
@@ -897,10 +941,7 @@ const icons = {
 
       <div>
         <div class="flex items-center gap-2.5 mb-4">
-          <div class="relative w-9 h-9 shrink-0">
-            <div class="absolute inset-0 rounded-sm rotate-[14deg]" style="background:var(--red);"></div>
-            <span class="absolute inset-0 flex items-center justify-center font-black text-white" style="font-family:'Bebas Neue';font-size:17px;">BF</span>
-          </div>
+          <img src="/brand/logo-bull.png" alt="BullFit" class="w-10 h-10 shrink-0 object-contain" />
           <span class="font-black tracking-[.14em] text-white" style="font-family:'Bebas Neue';font-size:1.1rem;">BULL<span style="color:var(--red);">FIT</span></span>
         </div>
         <p class="text-sm leading-relaxed" style="color:var(--gray-5);">Entrenamiento semipersonalizado en Armenia, Quindío. Máximo 10 personas por sesión.</p>

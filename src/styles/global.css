@@ -205,3 +205,33 @@ body:has(button:hover) #cur { width:16px; height:16px; background:var(--red); }
 }
 .inp-light::placeholder { color:rgba(0,0,0,.28); }
 .inp-light:focus { border-color:var(--red); box-shadow:0 0 0 3px rgba(232,0,14,.09); }
+
+/* carrusel Nuestra Familia (móvil) — marquee automático infinito */
+.fam-marquee-wrap {
+  overflow:hidden;
+  -webkit-mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent);
+          mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent);
+}
+.fam-marquee {
+  display:flex;
+  gap:.85rem;
+  width:max-content;
+  padding:.25rem 0;
+  animation:fam-marquee 60s linear infinite;
+}
+.fam-marquee:active { animation-play-state:paused; }
+.fam-card {
+  flex:0 0 auto;
+  width:68vw;
+  max-width:300px;
+  aspect-ratio:4/5;
+  box-shadow:0 18px 44px rgba(0,0,0,.45);
+}
+@keyframes fam-marquee {
+  from { transform:translateX(0); }
+  to   { transform:translateX(calc(-50% - .425rem)); }
+}
+@media (prefers-reduced-motion:reduce) {
+  .fam-marquee { animation:none; }
+  .fam-marquee-wrap { overflow-x:auto; }
+}
