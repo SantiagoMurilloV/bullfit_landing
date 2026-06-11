@@ -435,11 +435,13 @@ const icons = {
               </div>
               <div class="flex items-center gap-2">
                 <div
+                  id="status-dot-hero"
                   class="w-1.5 h-1.5 rounded-full bg-green-400"
                   style="animation:drift2 2s ease-in-out infinite;"
                 >
                 </div>
                 <span
+                  id="status-text-hero"
                   class="text-[.65rem] uppercase tracking-wider"
                   style="color:var(--gray-5);">Abierto ahora</span
                 >
@@ -1966,11 +1968,12 @@ const icons = {
               </div>
               <div class="mt-4 flex items-center gap-2">
                 <div
+                  id="status-dot-footer"
                   class="w-1.5 h-1.5 rounded-full bg-green-400"
                   style="animation:drift2 2s ease-in-out infinite;"
                 >
                 </div>
-                <span class="text-xs text-green-400">Abierto ahora</span>
+                <span id="status-text-footer" class="text-xs text-green-400">Abierto ahora</span>
               </div>
             </div>
           </div>
@@ -2383,5 +2386,47 @@ const icons = {
     </script>
 
     <Analytics />
+
+    <!-- Estado Abierto/Cerrado — zona horaria Colombia (America/Bogota) -->
+    <script>
+      function bullfitIsOpen() {
+        // Hora actual en Colombia (UTC-5, sin cambio de horario)
+        const now = new Date(
+          new Date().toLocaleString("en-US", { timeZone: "America/Bogota" })
+        );
+        const day = now.getDay();   // 0=Dom, 1=Lun, ..., 6=Sáb
+        const h   = now.getHours();
+        const m   = now.getMinutes();
+        const mins = h * 60 + m;   // minutos desde medianoche
+
+        if (day === 0) return false; // Domingo: cerrado
+        if (day >= 1 && day <= 5) {
+          // Lun–Vie: 6:00–12:00 y 16:00–19:00
+          return (mins >= 360 && mins < 720) || (mins >= 960 && mins < 1140);
+        }
+        if (day === 6) {
+          // Sábado: 9:00–11:00
+          return mins >= 540 && mins < 660;
+        }
+        return false;
+      }
+
+      function applyStatus() {
+        const open = bullfitIsOpen();
+        const color = open ? "#4ade80" : "#f87171"; // green-400 / red-400
+        const text  = open ? "Abierto ahora" : "Cerrado";
+
+        ["hero", "footer"].forEach((id) => {
+          const dot  = document.getElementById("status-dot-" + id);
+          const span = document.getElementById("status-text-" + id);
+          if (dot)  dot.style.backgroundColor = color;
+          if (span) { span.textContent = text; span.style.color = color; }
+        });
+      }
+
+      applyStatus();
+      // Recalcula cada minuto por si la página queda abierta
+      setInterval(applyStatus, 60_000);
+    </script>
   </body>
 </html>
