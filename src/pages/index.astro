@@ -2329,8 +2329,7 @@ const icons = {
       );
 
       /* FORM — envía la consulta al administrador como JSON */
-      // 👇 PEGA AQUÍ LA URL DEL ENDPOINT cuando la tengas (ej: 'https://...').
-      const FORM_ENDPOINT = "";
+      const FORM_ENDPOINT = "https://sea-turtle-app-wouf5.ondigitalocean.app/api/leads";
 
       document
         .getElementById("cform")
@@ -2351,14 +2350,8 @@ const icons = {
             fecha: new Date().toISOString(),
           };
 
-          const showMsg = (text: string, color: string) => {
-            msg.textContent = text;
-            msg.style.color = color;
-            msg.classList.remove("hidden");
-          };
-
           if (!payload.nombre || !payload.whatsapp) {
-            showMsg("Por favor completa tu nombre y WhatsApp.", "#dc2626");
+            alert("⚠️ Por favor completa tu nombre y número de WhatsApp.");
             return;
           }
 
@@ -2368,14 +2361,6 @@ const icons = {
           msg.classList.add("hidden");
 
           try {
-            if (!FORM_ENDPOINT) {
-              // Endpoint aún no configurado: dejamos el JSON listo en consola.
-              console.log(
-                "[BullFit] Consulta lista para enviar:",
-                JSON.stringify(payload),
-              );
-              throw new Error("ENDPOINT_PENDIENTE");
-            }
             const res = await fetch(FORM_ENDPOINT, {
               method: "POST",
               headers: { "Content-Type": "application/json" },
@@ -2383,33 +2368,15 @@ const icons = {
             });
             if (!res.ok) throw new Error("HTTP " + res.status);
 
-            btn.textContent = "¡Enviado!";
-            btn.style.background = "#16a34a";
-            showMsg(
-              "Gracias, te contactaremos pronto por WhatsApp.",
-              "#16a34a",
-            );
+            alert("✅ ¡Consulta enviada! Te contactaremos pronto por WhatsApp.");
             form.reset();
-            setTimeout(() => {
-              btn.textContent = original;
-              btn.style.background = "";
-              btn.disabled = false;
-              msg.classList.add("hidden");
-            }, 4000);
+            btn.textContent = original;
+            btn.disabled = false;
           } catch (err) {
             btn.textContent = original;
             btn.disabled = false;
-            if ((err as Error).message === "ENDPOINT_PENDIENTE") {
-              showMsg(
-                "Formulario en configuración. Escríbenos por WhatsApp mientras tanto.",
-                "#b45309",
-              );
-            } else {
-              showMsg(
-                "No se pudo enviar. Intenta de nuevo o escríbenos por WhatsApp.",
-                "#dc2626",
-              );
-            }
+            alert("⚠️ No se pudo enviar tu consulta. Por favor inténtalo de nuevo o escríbenos directamente por WhatsApp al +57 318 601 1559.");
+            console.error("[BullFit form]", err);
           }
         });
     </script>
