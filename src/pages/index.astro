@@ -1402,7 +1402,7 @@ const icons = {
                 [
                   {
                     day: "Lunes – Viernes",
-                    blocks: ["6:00 AM – 12:00 PM", "4:00 PM – 7:00 PM"],
+                    blocks: ["6:00 AM – 11:00 AM", "4:00 PM – 7:00 PM"],
                   },
                   { day: "Sábados", blocks: ["9:00 AM – 11:00 AM"] },
                 ].map((row) => (
@@ -1437,7 +1437,7 @@ const icons = {
                   class="text-[.8rem] font-bold uppercase tracking-[.08em]"
                   style="color:var(--gray-4);"
                 >
-                  Festivos
+                  Domingos y Festivos
                 </span>
                 <span
                   class="text-[.7rem] font-bold uppercase tracking-[.14em] px-3 py-1.5 rounded-full"
@@ -2391,8 +2391,8 @@ const icons = {
 
         if (day === 0) return false; // Domingo: cerrado
         if (day >= 1 && day <= 5) {
-          // Lun–Vie: 6:00–12:00 y 16:00–19:00
-          return (mins >= 360 && mins < 720) || (mins >= 960 && mins < 1140);
+          // Lun–Vie: 6:00–11:00 y 16:00–19:00
+          return (mins >= 360 && mins < 660) || (mins >= 960 && mins < 1140);
         }
         if (day === 6) {
           // Sábado: 9:00–11:00
