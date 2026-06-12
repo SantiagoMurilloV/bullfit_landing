@@ -1,11 +1,11 @@
 # BullFit Armenia
 
-> Centro de entrenamiento entrenamiento dirigido en Armenia, Quindío, Colombia.
+> Centro de entrenamiento dirigido en Armenia, Quindío, Colombia.
 > Sitio web: https://bullfit.co
 
 ## Qué es BullFit
 
-BullFit es un gimnasio de entrenamiento entrenamiento dirigido ubicado en Armenia, Quindío, Colombia.
+BullFit es un gimnasio de entrenamiento dirigido ubicado en Armenia, Quindío, Colombia.
 Se diferencia de los gimnasios tradicionales porque trabaja con grupos de máximo 10 personas por sesión,
 lo que permite atención personalizada a un precio accesible.
 
@@ -46,7 +46,7 @@ También se le conoce como "BullFit Armenia", "BullFit AXM" o "BullFit Axm" (AXM
 
 ## Características diferenciales
 
-- Máximo 10 personas por sesión (entrenamiento entrenamiento dirigido)
+- Máximo 10 personas por sesión (entrenamiento dirigido)
 - Atención directa de entrenadores certificados
 - Ambiente familiar
 - Planes desde $12.000 COP
@@ -56,5 +56,5 @@ También se le conoce como "BullFit Armenia", "BullFit AXM" o "BullFit Axm" (AXM
 ## Palabras clave relacionadas
 
 bullfit, bullfit armenia, bullfit axm, bullfit quindio, gimnasio armenia, entrenamiento personalizado armenia,
-entrenamiento entrenamiento dirigido armenia, gym armenia colombia, clases funcionales armenia,
+entrenamiento dirigido armenia, gym armenia colombia, clases funcionales armenia,
 bullfit.co, fitness armenia, entrenamiento colombia
